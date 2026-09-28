@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#125b63">
+  <meta name="description" content="A little ocean adventure, made with love for your birthday.">
+  <title>28-09-26 - Ponyo Queen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23125b63'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23fff2d6'/%3E%3Ccircle cx='17' cy='16' r='3' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="game-core.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main id="ocean" aria-label="Birthday ocean adventure">
+    <div class="painted-sea" aria-hidden="true"></div>
+    <canvas id="sea" aria-label="Ponyo swims through an underwater world to collect pearls"></canvas>
+    <header class="masthead">
+      <!-- <a class="wordmark" href="./" aria-label="For my love, home"><span class="shell-mark">✧</span> for my love<span class="wordmark-dot">.</span></a> -->
+      <button id="sound" class="icon-button" aria-label="Turn music off" aria-pressed="false">♫ <span>music on</span></button>
+      <audio id="music" loop preload="auto"></audio>
+    </header>
+
+    <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+      <!-- <p class="eyebrow">THE LIBRA QUEEN'S</p> -->
+      <h1 id="welcome-title">My little Ponyo's<br><em>birthday.</em></h1>
+      <p class="dedication">In all your nine lives, I'll always find you.</p>
+      <button id="start" class="start-button">press to start <span>✧</span></button>
+      <p class="sleep-note">To the one who deserves all the beauty of the world.</p>
+    </section>
+
+    <section id="hud" class="hud" hidden aria-label="Adventure progress">
+      <p id="chapter-label" class="eyebrow">CHAPTER 01 / 06</p>
+      <div class="pearl-counter"><span class="pearl-icon" aria-hidden="true"></span><strong id="count">0 / 5</strong><span>pearls</span></div>
+      <p id="mission">Collect 5 pearls for the next part</p>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="controls" class="controls" hidden>
+      <div class="depth-controls"><button id="up" aria-label="Swim up">↑</button><button id="down" aria-label="Swim down">↓</button></div>
+      <p class="control-tip">A little higher.<br>A little deeper.</p>
+      <button id="swim" class="swim-button"><span>hold to swim</span><span aria-hidden="true">⟶</span><small>slide up & down to steer</small></button>
+    </div>
+    <footer class="ocean-footer"><div id="chapter-dots" class="chapter-dots" aria-label="0 of 6 chapters revealed"></div><button id="pause" hidden>pause</button></footer>
+
+    <section id="clue-dialog" class="floating-clue" aria-labelledby="clue-title" hidden aria-live="polite">
+      <div class="postcard-top"><span id="clue-number" class="eyebrow"></span><span class="postcard-stamp" aria-hidden="true">♡</span></div>
+      <div id="clue-symbol" class="clue-symbol" aria-hidden="true"></div>
+      <p id="clue-time" class="card-time"></p><h2 id="clue-title"></h2><p id="clue-text" class="clue-text"></p>
+      <p id="clue-footnote" class="handwritten"></p>
+      <button id="continue" class="coral-button">There’s more to discover <span>→</span></button>
+      <p class="card-bottom">A LITTLE SECRET FROM ME TO YOU</p>
+    </section>
+    <dialog id="pause-dialog" class="paper-dialog compact" aria-labelledby="pause-title"><p class="eyebrow">TAKE A LITTLE BREATH</p><h2 id="pause-title">The ocean can wait.</h2><p>Your pearls are right where you left them.</p><button id="resume" class="coral-button">Keep swimming →</button><button id="restart" class="text-button">Start the adventure again</button></dialog>
+    <dialog id="ending-dialog" class="paper-dialog ending" aria-labelledby="ending-title"><p class="eyebrow">THE TREASURE OF MY LIFE</p><h2 id="ending-title">You deserve it all my love.</h2><p>Happy birthday, my love. I can't wait to hold you in my arms forever.</p><button id="replay" class="coral-button">One more little swim? ↻</button></dialog>
+  </main>
+</body>
+</html>
